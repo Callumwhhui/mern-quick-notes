@@ -21,7 +21,10 @@ export function getToken() {
 
 export function checkToken() {
     return usersAPI.checkToken()
-    .then(dateStr => new Date(dateStr));
+    .then(obj => ({
+        exp: new Date(obj.exp),
+        user: obj.user
+    }));
 }
 
 
