@@ -9,10 +9,10 @@ export default function NotesPage({ notes, addNote, setNotes }) {
     setNewNote(evt.target.value);
   };
 
-  const handleAddNote = async () => {
+  const handleAddNote =  () => {
     addNote(newNote);
     console.log('==>', newNote)
-    await saveNote(notes);
+    // await saveNote(notes);
     setNewNote('');
   }
 
